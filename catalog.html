@@ -81,12 +81,14 @@
           <fieldset class="catalog-filter-group">
             <legend class="catalog-filter-title">Стоимость, ₽:</legend>
             <div class="catalog-filter-price">
-              <label class="catalog-filter-label visually-hidden">Минимальная стоимость
-                <input class="catalog-filter-input" type="number" name="min-price" placeholder="от" value="0">
-              </label>
-              <label class="catalog-filter-label visually-hidden">Максимальная стоимость
-                <input class="catalog-filter-input" type="number" name="max-price" placeholder="до" value="9000">
-              </label>
+              <div class="catalog-filter-price-item">
+                <input class="catalog-filter-input" type="number" name="min-price" id="min" value="0">
+                <label class="catalog-filter-label" for="min">от</label>
+              </div>
+              <div class="catalog-filter-price-item">
+                <input class="catalog-filter-input" type="number" name="max-price" id="max" value="9000">
+                <label class="catalog-filter-label" for="max">до</label>
+              </div>
             </div>
             <div class="catalog-filter-button">
               <button class="range-toggle toggle-min" type="button">
