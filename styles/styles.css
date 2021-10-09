@@ -1,0 +1,16 @@
+.main-index-logo {
+  background: url("../img/main-divider.svg"), url("../img/index-background.jpg") 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.newsletter {
+  background-image: url("../img/background-newsletter.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.catalog-container {
+  background-image: url("../img/catalog-background.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
