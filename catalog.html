@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Каталог</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <header class="page-header">
       <a class="page-header-logo" href="index.html">
         <span class="visually-hidden">Логотип</span>
-        <img src="img/logo-sedona.svg" width="138" height="70" alt="Логотип сайта города Седона">
+        <img src="img/logo/logo-sedona.svg" width="138" height="70" alt="Логотип сайта города Седона">
       </a>
       <nav class="navigation">
         <ul class="navigation-list">
@@ -26,7 +26,7 @@
         <div class="navigation-list navigation-other">
           <a class="navigation-link navigation-link-search" href="#" aria-label="Поиск"></a>
           <a class="navigation-link navigation-link-favorites" href="#" aria-label="Избранное"></a>
-          <button class="navigation-other button" type="button">Хочу сюда!</button>
+          <button class="navigation-other-button" type="button">Хочу сюда!</button>
         </div>
       </nav>
     </header>
@@ -102,8 +102,8 @@
               </div>
             </fieldset>
             <div class="catalog-filter-group">
-              <button class="button" type="submit">Применить</button>
-              <button class="button" type="reset">Сбросить</button>
+              <button class="button button-apply" type="submit">Применить</button>
+              <button class="button button-reset" type="reset">Сбросить</button>
             </div>
           </form>
         </section>
@@ -129,7 +129,7 @@
           <li class="product-cards-item">
             <div class="product-cards-description">
               <a class="product-card-link" href="product1.html">
-                <img class="product-card-image" src="img/amara.jpg" width="180" height="120" alt="Amara Resort & Spa">
+                <img class="product-card-image" src="img/product-cards/amara.jpg" width="180" height="120" alt="Amara Resort & Spa">
               </a>
               <div class="product-card-container">
                 <a class="product-card-link" href="product1.html">
@@ -140,8 +140,8 @@
                   <span class="product-card-price">От 4000 ₽</span>
                 </div>
                 <div class="product-card-button">
-                  <a class="product-card-button button" href="#">Подробнее</a>
-                  <a class="product-card-button button" href="#">В избранное</a>
+                  <a class="product-card-button button-details-1" href="#">Подробнее</a>
+                  <a class="product-card-button button-favorites-1" href="#">В избранное</a>
                 </div>
               </div>
               <div class="product-card-rating">
@@ -155,7 +155,7 @@
           <li class="product-cards-item">
             <div class="product-cards-description">
               <a class="product-card-link" href="product2.html">
-                <img class="product-card-image" src="img/desert.jpg" width="180" height="120" alt="Desert Quail Inn">
+                <img class="product-card-image" src="img/product-cards/desert.jpg" width="180" height="120" alt="Desert Quail Inn">
               </a>
               <div class="product-card-container">
                 <a class="product-card-link" href="product2.html">
@@ -166,8 +166,8 @@
                   <span class="product-card-price">От 3000 ₽</span>
                 </div>
                 <div class="product-card-button">
-                  <a class="product-card-button button" href="#">Подробнее</a>
-                  <a class="product-card-button button" href="#">В избранное</a>
+                  <a class="product-card-button button-details-2" href="#">Подробнее</a>
+                  <a class="product-card-button button-favorites-2" href="#">В избранное</a>
                 </div>
               </div>
               <div class="product-card-rating">
@@ -181,7 +181,7 @@
           <li class="product-cards-item">
             <div class="product-cards-description">
               <a class="product-card-link" href="product3.html">
-                <img class="product-card-image" src="img/villas.jpg" width="180" height="120" alt="Villas at Poco Diablo">
+                <img class="product-card-image" src="img/product-cards/villas.jpg" width="180" height="120" alt="Villas at Poco Diablo">
               </a>
               <div class="product-card-container">
                 <a class="product-card-link" href="product3.html">
@@ -192,8 +192,8 @@
                   <span class="product-card-price">От 2000 ₽</span>
                 </div>
                 <div class="product-card-button">
-                  <a class="product-card-button button" href="#">Подробнее</a>
-                  <a class="product-card-button button" href="#">В избранное</a>
+                  <a class="product-card-button button-details-3" href="#">Подробнее</a>
+                  <a class="product-card-button button-favorites-3" href="#">В избранное</a>
                 </div>
               </div>
               <div class="product-card-rating">
@@ -207,7 +207,7 @@
           <li class="product-cards-item">
             <div class="product-cards-description">
               <a class="product-card-link" href="product4.html">
-                <img class="product-card-image" src="img/greentree.jpg" width="180" height="120" alt="GreenTree Inn">
+                <img class="product-card-image" src="img/product-cards/greentree.jpg" width="180" height="120" alt="GreenTree Inn">
               </a>
               <div class="product-card-container">
                 <a class="product-card-link" href="product4.html">
@@ -218,8 +218,8 @@
                   <span class="product-card-price">От 3000 ₽</span>
                 </div>
                 <div class="product-card-button">
-                  <a class="product-card-button button" href="#">Подробнее</a>
-                  <a class="product-card-button button" href="#">В избранное</a>
+                  <a class="product-card-button button-details-4" href="#">Подробнее</a>
+                  <a class="product-card-button button-favorites-4" href="#">В избранное</a>
                 </div>
               </div>
               <div class="product-card-rating">
@@ -231,7 +231,7 @@
             </div>
           </li>
         </ul>
-        <button class="button pagination-show-more" type="submit">Загрузить ещё</button>
+        <button class="button pagination-show-more" type="button">Загрузить ещe</button>
       </section>
       <div class="pagination">
         <ul class="pagination-list">
@@ -261,9 +261,9 @@
           <option value="number">16</option>
         </select>
       </div>
-      <section class="newsletter">
-        <h2 class="newsletter-title">Подпишитесь на рассылку</h2>
-        <p class="newsletter-text">Только полезная информация и никакого спама, честное бойскаутское!</p>
+      <section class="newsletter newsletter-inner">
+        <h2 class="newsletter-title newsletter-title-inner">Подпишитесь на рассылку</h2>
+        <p class="newsletter-text newsletter-text-inner">Только полезная информация и никакого спама, честное бойскаутское!</p>
         <form class="newsletter-form" action="http://echo.htmlacademy.ru" method="POST">
           <div class="newsletter-form">
             <label class="visually-hidden" for="newsletter-email">Email</label>
@@ -287,7 +287,7 @@
       </ul>
       <a class="contacts-phone" href="tel:88128121212">+7 (812) 812-12-12</a>
       <a class="htmlacademy-link" href="https://htmlacademy.ru/">
-        <img src="img/logo-htmlacademy.svg" width="115" height="34" alt="Ссылка на htmlacademy.ru">
+        <img src="img/logo/logo-htmlacademy.svg" width="115" height="34" alt="Ссылка на htmlacademy.ru">
       </a>
     </footer>
   </body>
