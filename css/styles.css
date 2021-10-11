@@ -20,12 +20,10 @@ body {
   line-height: 21px;
   text-align: center;
   color: #333333;
-  background-color: #f2f2f2;
 }
 
 .page-header {
   color: #000000;
-  background-color: #ffffff;
 }
 
 .navigation-link {
@@ -33,9 +31,7 @@ body {
   line-height: 26px;
   font-weight: 700;
   color: inherit;
-  background-color: inherit;
   text-decoration: none;
-  text-transform: capitalize;
 }
 
 .navigation-other-btn {
@@ -43,13 +39,11 @@ body {
   font-weight: 700;
   color: #ffffff;
   background-color: #756257;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
 .main-index {
   color: inherit;
-  background-color: #ffffff;
 }
 
 .main-index-logo {
@@ -61,7 +55,6 @@ body {
 
 .main-index-description {
   line-height: 36px;
-  text-decoration: none;
 }
 
 .main-index-description-title {
@@ -74,14 +67,11 @@ body {
 .main-index-text {
   font-size: 22px;
   font-weight: 400;
-  text-transform: none;
 }
 
 .advantages-item {
   font-weight: 400;
   background-color: rgba(131, 179, 211, 0.12);
-  text-decoration: none;
-  text-transform: none;
 }
 
 .advantages-title {
@@ -109,16 +99,11 @@ body {
   background-color: rgba(131, 179, 211, 0.2);
 }
 
-.modal {
-  background-color: #ffffff;
-}
-
 .modal-title {
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
   color: #000000;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -126,8 +111,6 @@ body {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
-  text-decoration: none;
-  text-transform: none;
 }
 
 .modal-link {
@@ -141,6 +124,7 @@ body {
 }
 
 .newsletter {
+  text-align: center;
   color: #ffffff;
   background-image: url("../img/background/background-newsletter.jpg");
   background-size: 100% auto;
@@ -148,20 +132,17 @@ body {
   background-position: center;
 }
 
-.newsletter-title {
+.newsletter h2 {
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
-.newsletter-text {
+.newsletter p {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
-  text-decoration: none;
-  text-transform: none;
 }
 
 .field {
@@ -171,8 +152,6 @@ body {
   color: #000000;
   opacity: 0.6;
   background-color: #f2f2f2;
-  text-decoration: none;
-  text-transform: none;
 }
 
 .newsletter-button {
@@ -181,13 +160,11 @@ body {
   font-weight: 700;
   color: #ffffff;
   background-color: #83b3d3;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
 .main-footer {
   font-weight: 400;
-  background-color: #ffffff;
 }
 
 .contacts-phone {
@@ -205,8 +182,6 @@ body {
   font-weight: 400;
   text-align: left;
   color: #333333;
-  background-color: #f2f2f2;
-  text-decoration: none;
 }
 
 .catalog-container {
@@ -215,8 +190,6 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
-  text-decoration: none;
-  text-transform: none;
 }
 
 .inner-header-title {
@@ -258,8 +231,6 @@ body {
   text-align: center;
   color: #ffffff;
   background-color: transparent;
-  text-decoration: none;
-  text-transform: none;
 }
 
 .sorting {
@@ -267,7 +238,6 @@ body {
   line-height: 39px;
   font-weight: 700;
   color: #000000;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -277,7 +247,6 @@ body {
   font-weight: 400;
   text-align: left;
   color: #333333;
-  text-transform: none;
 }
 
 .product-card-link {
@@ -286,7 +255,6 @@ body {
   font-weight: 700;
   color: #000000;
   text-decoration: none;
-  text-transform: none;
 }
 
 .product-card-button {
@@ -299,17 +267,11 @@ body {
   text-transform: uppercase;
 }
 
-.button-details-1,
-.button-details-2,
-.button-details-3,
-.button-details-4 {
+.button-details {
   background-color: #756257;
 }
 
-.button-favorites-1,
-.button-favorites-2,
-.button-favorites-3,
-.button-favorites-4 {
+.button-favorites {
   background-color: #83b3d3;
 }
 
@@ -320,7 +282,6 @@ body {
   text-align: center;
   color: #333333;
   background-color: #f2f2f2;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -331,7 +292,6 @@ body {
   text-align: center;
   color: #ffffff;
   background-color: #83b3d3;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -357,15 +317,13 @@ body {
 }
 
 .newsletter-inner {
-  text-align: center;
-  background-color: inherit;
-  background-image: inherit;
+  background: none;
 }
 
-.newsletter-title-inner {
+.newsletter-inner h2 {
   color: #000000;
 }
 
-.newsletter-text-inner {
+.newsletter-inner p {
   color: #333333;
 }
