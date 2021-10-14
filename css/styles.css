@@ -14,7 +14,23 @@
   font-display: swap;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+} /*в лайве это свойство для html добавлено - без него стики футер не работает, пробовала с ним и без него*/
+
 body {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0 auto;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
@@ -22,8 +38,59 @@ body {
   color: #333333;
 }
 
+.main-container {
+  flex-grow: 1;
+}
+
 .page-header {
   color: #000000;
+}
+
+.page-header-logo {
+  display: block;
+  width: 100%;
+  max-width: 138px;
+  margin-left: auto;
+  margin-right: auto;/*логотип по центру страницы, т.к. соседние блоки одинак.размера 460px*/
+}
+
+.navigation {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;/*блок по центру страницы*/
+  /*justify-content: space-between;/*нужен или нет или достаточно св-ва маргин чтобы выровнять по центру?*/
+}
+
+.navigation-list {
+  margin: 0;
+  padding-left: 71px;
+  width: 460px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navigation-link-search {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.navigation-link-favorites {
+  display: block;
+  width: 31px;
+  height: 17px;
+  padding-left: 21px;
+}
+
+.navigation-other {
+  margin: 0;
+  margin-left: auto;
+  padding-right: 72px;
+  width: 460px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .navigation-link {
@@ -32,6 +99,8 @@ body {
   font-weight: 700;
   color: inherit;
   text-decoration: none;
+  height: 26px;
+  padding-right: 33px;
 }
 
 .navigation-other-btn {
@@ -40,10 +109,28 @@ body {
   color: #ffffff;
   background-color: #756257;
   text-transform: uppercase;
+  width: 160px;
+  height: 37px;
+  padding-left: 33px;
 }
 
 .main-index {
   color: inherit;
+}
+
+.page-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1,
+.page-header-logo span {
+  display: none;
+}
+
+.main-index-logo img {
+  width: 100%;
+  max-width: 458px;
 }
 
 .main-index-logo {
@@ -51,10 +138,19 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: bottom center;
+  display: block;
+  margin: 0 auto;
+  padding: 51px 371px 82px;
 }
 
 .main-index-description {
   line-height: 36px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 63px 240px 79px;
 }
 
 .main-index-description-title {
@@ -62,16 +158,45 @@ body {
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
+  width: 720px;
+  margin: 0;
+  padding-bottom: 31px;
 }
 
 .main-index-text {
   font-size: 22px;
   font-weight: 400;
+  width: 720px;
+  margin: 0;
+}
+
+.picture {
+  width: 100%;
+  max-width: 800px;
+  margin: 0;
+  padding: 0;
+}
+
+.advantages-list {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .advantages-item {
   font-weight: 400;
   background-color: rgba(131, 179, 211, 0.12);
+}
+
+.advantages-item:nth-child(3),
+.advantages-item:nth-child(4),
+.advantages-item:nth-child(5) {
+  width: 33.33%;
+  max-width: 400px;
+  margin: 0;
+  padding: 98px 75px 77px;
 }
 
 .advantages-title {
@@ -80,15 +205,43 @@ body {
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
+  margin: 0;
 }
 
 .advantages-item-desc {
+  width: 33.33%;
+  max-width: 400px;
+  margin: 0;
+  padding: 98px 90px 77px;
   color: #ffffff;
   background-color: #83b3d3;
 }
 
-.advantages-title-desc {
+.advantages-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.advantages-item:nth-child(2) .advantages-container {/*преимущество №2*/
+  flex-direction: row-reverse;
+}
+
+.advantages-list .advantages-list {/*подсписок*/
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.advantages-title-desc {/*заголовки преимуществ*/
   color: #ffffff;
+  margin: 0 auto;
 }
 
 .advantages-item-food {
@@ -99,18 +252,39 @@ body {
   background-color: rgba(131, 179, 211, 0.2);
 }
 
+.advantages-list-services .advantages-item {/*элементы подсписка*/
+  width: 33.33%;
+  margin: 0;
+  padding: 184px 75px 79px;
+}
+
+.modal {
+  width: 100%;
+  margin: 0 auto;
+  padding: 91px 240px 91px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .modal-title {
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
+  width: 720px;
+  margin: 0;
+  padding-bottom: 35px;
 }
 
 .modal-title-text {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
+  width: 720px;
+  margin: 0;
+  padding-bottom: 58px;
 }
 
 .modal-link {
@@ -130,6 +304,12 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 94px 200px 94px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .newsletter h2 {
@@ -137,12 +317,18 @@ body {
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
+  width: 720px;
+  margin: 0;
+  padding-bottom: 35px;
 }
 
 .newsletter p {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
+  width: 720px;
+  margin: 0;
+  padding-bottom: 46px;
 }
 
 .field {
@@ -165,6 +351,24 @@ body {
 
 .main-footer {
   font-weight: 400;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-link {
+  width: 20px;
+  height: 18px;
+  display: block;
+}
+
+.social-list {
+  margin: 0;
+  padding: 49px auto 53px 72px;
+  width: 230px;
+  display: flex;
+  align-items: center;
 }
 
 .contacts-phone {
@@ -174,6 +378,17 @@ body {
   color: #000000;
   text-decoration: none;
   text-transform: uppercase;
+  display: block;
+  width: 720px;
+  margin: 0;
+  padding: 40px 0;
+}
+
+.htmlacademy-link {
+  display: block;
+  width: 230px;
+  margin: 0;
+  padding: 42px 72px 44px 0;
 }
 
 .main-inner {
@@ -326,4 +541,19 @@ body {
 
 .newsletter-inner p {
   color: #333333;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.navigation-list,
+.navigation-link-favorites,
+.navigation-link-search,
+div,
+section,
+footer,
+.social-link {
+  outline: 1px solid #ff0000;/*вспомогат.обводка*/
 }
