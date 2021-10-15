@@ -20,16 +20,12 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-} /*в лайве это свойство для html добавлено - без него стики футер не работает, пробовала с ним и без него*/
-
 body {
   max-width: 1200px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
@@ -38,94 +34,103 @@ body {
   color: #333333;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
 .main-container {
   flex-grow: 1;
 }
 
-.page-header {
-  color: #000000;
-}
-
 .page-header-logo {
+  position: relative;
+  z-index: 1;
   display: block;
-  width: 100%;
-  max-width: 138px;
-  margin-left: auto;
-  margin-right: auto;/*логотип по центру страницы, т.к. соседние блоки одинак.размера 460px*/
+  width: 138px;
+  margin: 0 auto -5px;
 }
 
 .navigation {
   display: flex;
   width: 100%;
-  margin: 0 auto;/*блок по центру страницы*/
-  /*justify-content: space-between;/*нужен или нет или достаточно св-ва маргин чтобы выровнять по центру?*/
+  margin: 0 auto;
+}
+
+.wrapper {
+  padding-left: 71px;
+  padding-right: 71px;
 }
 
 .navigation-list {
-  margin: 0;
-  padding-left: 71px;
-  width: 460px;
+  margin: 0 auto 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 450px;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.navigation-link-search {
-  display: block;
-  width: 18px;
-  height: 18px;
-}
-
-.navigation-link-favorites {
-  display: block;
-  width: 31px;
-  height: 17px;
-  padding-left: 21px;
-}
-
 .navigation-other {
-  margin: 0;
-  margin-left: auto;
-  padding-right: 72px;
-  width: 460px;
-  display: flex;
+  margin: 0 0 0 auto;
   justify-content: flex-end;
-  align-items: center;
 }
 
 .navigation-link {
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
-  color: inherit;
+  color: #000000;
   text-decoration: none;
   height: 26px;
-  padding-right: 33px;
+}
+
+.navigation-item {
+  margin: 0 33px 0 0;
+}
+
+.navigation-other-link {
+  display: block;
+  margin-left: 20px;
+}
+
+.navigation-other-link-search {
+  width: 18px;
+  height: 18px;
+}
+
+.navigation-other-link-favorites {
+  width: 31px;
+  height: 17px;
 }
 
 .navigation-other-btn {
+  font-family: "PT Sans", sans-serif;
   font-size: 16px;
+  line-height: 21px;
   font-weight: 700;
   color: #ffffff;
   background-color: #756257;
   text-transform: uppercase;
   width: 160px;
-  height: 37px;
-  padding-left: 33px;
-}
-
-.main-index {
-  color: inherit;
-}
-
-.page-container {
-  width: 100%;
-  margin: 0 auto;
-}
-
-h1,
-.page-header-logo span {
-  display: none;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
 }
 
 .main-index-logo img {
@@ -140,17 +145,14 @@ h1,
   background-position: bottom center;
   display: block;
   margin: 0 auto;
-  padding: 51px 371px 82px;
+  padding: 51px 0 82px;
 }
 
 .main-index-description {
   line-height: 36px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 63px 240px 79px;
+  padding: 36px 0 60px;
 }
 
 .main-index-description-title {
@@ -158,90 +160,69 @@ h1,
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
-  width: 720px;
-  margin: 0;
-  padding-bottom: 31px;
+  padding-bottom: 8px;
 }
 
 .main-index-text {
   font-size: 22px;
   font-weight: 400;
-  width: 720px;
-  margin: 0;
 }
 
-.picture {
+.advantages-picture {
   width: 100%;
   max-width: 800px;
-  margin: 0;
-  padding: 0;
 }
 
 .advantages-list {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
 }
 
 .advantages-item {
+  width: 400px;
+  min-height: 384px;
+  padding: 95px 82px 50px;
   font-weight: 400;
   background-color: rgba(131, 179, 211, 0.12);
 }
 
-.advantages-item:nth-child(3),
-.advantages-item:nth-child(4),
-.advantages-item:nth-child(5) {
-  width: 33.33%;
-  max-width: 400px;
-  margin: 0;
-  padding: 98px 75px 77px;
+.advantages-item-container {
+  width: 100%;
 }
 
 .advantages-title {
+  max-width: 172px;
+  margin: 0 auto 30px;
+  font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  font-weight: 700;
   color: #000000;
   text-transform: uppercase;
-  margin: 0;
 }
 
 .advantages-item-desc {
-  width: 33.33%;
-  max-width: 400px;
-  margin: 0;
-  padding: 98px 90px 77px;
   color: #ffffff;
   background-color: #83b3d3;
 }
 
 .advantages-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
   display: flex;
-  align-items: center;
 }
 
-.advantages-item:nth-child(2) .advantages-container {/*преимущество №2*/
+.advantages-item-container:nth-child(2) .advantages-container {/*преимущество №2*/
   flex-direction: row-reverse;
-}
-
-.advantages-list .advantages-list {/*подсписок*/
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-wrap: nowrap;
 }
 
 .advantages-title-desc {/*заголовки преимуществ*/
   color: #ffffff;
-  margin: 0 auto;
+}
+
+.advantages-description {
+  margin-bottom: 30px;
 }
 
 .advantages-item-food {
@@ -253,142 +234,149 @@ h1,
 }
 
 .advantages-list-services .advantages-item {/*элементы подсписка*/
-  width: 33.33%;
-  margin: 0;
-  padding: 184px 75px 79px;
+  padding-top: 182px;
 }
 
-.modal {
-  width: 100%;
+.advantages-list-services .advantages-title {
+  margin-bottom: 15px;
+}
+
+.search {
+  max-width: 584px;
   margin: 0 auto;
-  padding: 91px 240px 91px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 60px 0 91px;
 }
 
-.modal-title {
+.search-title {
+  padding-bottom: 7px;
+  font-weight: 700;
   font-size: 30px;
   line-height: 36px;
-  font-weight: 700;
   color: #000000;
   text-transform: uppercase;
-  width: 720px;
-  margin: 0;
-  padding-bottom: 35px;
 }
 
-.modal-title-text {
+.search-title-text {
+  padding-bottom: 35px;
+  font-weight: 400;
   font-size: 22px;
   line-height: 26px;
-  font-weight: 400;
-  width: 720px;
-  margin: 0;
-  padding-bottom: 58px;
 }
 
-.modal-link {
+.search-link {
+  display: block;
+  max-width: 575px;
+  margin: 0 auto;
+  padding: 13px;
+  font-weight: 700;
   font-size: 20px;
   line-height: 36px;
-  font-weight: 700;
   color: #ffffff;
-  background-color: #756257;
-  text-decoration: none;
   text-transform: uppercase;
+  text-decoration: none;
+  background-color: #756257;
+  border-radius: 10px;
 }
 
 .newsletter {
+  padding: 94px 0 94px;
   text-align: center;
   color: #ffffff;
   background-image: url("../img/background/background-newsletter.jpg");
-  background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
-  margin: 0 auto;
-  padding: 94px 200px 94px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-size: 100% auto;
 }
 
 .newsletter h2 {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-bottom: 27px;
+  font-weight: 700;
   font-size: 30px;
   line-height: 36px;
-  font-weight: 700;
   text-transform: uppercase;
-  width: 720px;
-  margin: 0;
-  padding-bottom: 35px;
 }
 
 .newsletter p {
+  max-width: 545px;
+  margin: 0 auto;
+  padding-bottom: 46px;
+  font-weight: 400;
   font-size: 22px;
   line-height: 26px;
-  font-weight: 400;
-  width: 720px;
-  margin: 0;
-  padding-bottom: 46px;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .field {
+  width: 100%;
+  font-weight: 400;
   font-size: 18px;
   line-height: 26px;
-  font-weight: 400;
   color: #000000;
+  background: #f2f2f2;
+  border: none;
+  border-radius: 10px 0 0 10px;
+}
+
+.field::placeholder {
   opacity: 0.6;
-  background-color: #f2f2f2;
 }
 
 .newsletter-button {
+  flex-shrink: 0;
+  width: 200px;
+  font-weight: 700;
   font-size: 20px;
   line-height: 26px;
-  font-weight: 700;
   color: #ffffff;
-  background-color: #83b3d3;
   text-transform: uppercase;
+  background: #83b3d3;
+  border: none;
+  border-radius: 0 10px 10px 0;
 }
 
 .main-footer {
-  font-weight: 400;
-  width: 100%;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-}
-
-.social-link {
-  width: 20px;
-  height: 18px;
-  display: block;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .social-list {
-  margin: 0;
-  padding: 49px auto 53px 72px;
-  width: 230px;
   display: flex;
-  align-items: center;
+  margin: 0 auto 0 0;
+  padding: 0;
+  list-style: none;
+  /*align-items: center; - это свойство не нужно?*/
+}
+
+.social-link {
+  display: block;
+  width: 20px;
+  height: 18px;
 }
 
 .contacts-phone {
+  display: block;
+  font-weight: 400;
   font-size: 40px;
   line-height: 40px;
-  font-weight: 400;
   color: #000000;
-  text-decoration: none;
   text-transform: uppercase;
-  display: block;
-  width: 720px;
-  margin: 0;
-  padding: 40px 0;
+  text-decoration: none;
 }
 
 .htmlacademy-link {
   display: block;
-  width: 230px;
-  margin: 0;
-  padding: 42px 72px 44px 0;
+  width: 115px;
+  margin-left: auto;
 }
 
 .main-inner {
@@ -543,14 +531,9 @@ h1,
   color: #333333;
 }
 
-img {
-  display: block;
-  margin: 0 auto;
-}
-
 .navigation-list,
-.navigation-link-favorites,
-.navigation-link-search,
+.navigation-other-link-favorites,
+.navigation-other-link-search,
 div,
 section,
 footer,
