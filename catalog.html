@@ -7,10 +7,6 @@
   </head>
   <body>
     <header class="page-header">
-      <a class="page-header-logo" href="index.html">
-        <span class="visually-hidden">Логотип</span>
-        <img src="img/logo/logo-sedona.svg" width="138" height="70" alt="Логотип сайта города Седона">
-      </a>
       <nav class="navigation wrapper">
         <ul class="navigation-list">
           <li class="navigation-item">
@@ -23,14 +19,18 @@
             <a class="navigation-link navigation-link-current">Гостиницы</a>
           </li>
         </ul>
+        <a class="page-header-logo" href="index.html">
+          <span class="visually-hidden">Логотип</span>
+          <img src="img/logo/logo-sedona.svg" width="138" height="70" alt="Логотип сайта города Седона">
+        </a>
         <div class="navigation-list navigation-other">
           <a class="navigation-other-link navigation-other-link-search" href="#" aria-label="Поиск"></a>
           <a class="navigation-other-link navigation-other-link-favorites" href="#" aria-label="Избранное"></a>
-          <button class="navigation-other button navigation-other-btn" type="button">Хочу сюда!</button>
+          <button class="navigation-other-link button navigation-other-btn" type="button">Хочу сюда!</button>
         </div>
       </nav>
     </header>
-    <main class="main-container main-inner">
+    <main class="main-container main-inner wrapper">
       <div class="catalog-container">
         <header class="inner-header">
           <h1 class="inner-header-title">Гостиницы Седоны</h1>
@@ -265,11 +265,9 @@
         <h2 class="newsletter-title">Подпишитесь на рассылку</h2>
         <p class="newsletter-text">Только полезная информация и никакого спама, честное бойскаутское!</p>
         <form class="newsletter-form" action="http://echo.htmlacademy.ru" method="POST">
-          <div class="newsletter-form">
-            <label class="visually-hidden" for="newsletter-email">Email</label>
-            <input class="field" type="email" id="newsletter-email" placeholder="Ваш e-mail" required>
-            <button class="button newsletter-button" type="submit">Подписаться</button>
-          </div>
+          <label class="visually-hidden" for="newsletter-email">Email</label>
+          <input class="field" type="email" id="newsletter-email" placeholder="Ваш e-mail" required>
+          <button class="button newsletter-button" type="submit">Подписаться</button>
         </form>
       </section>
     </main>
