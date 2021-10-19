@@ -30,8 +30,8 @@
         </div>
       </nav>
     </header>
-    <main class="main-container main-inner wrapper">
-      <div class="catalog-container">
+    <main class="main-container main-inner">
+      <section class="catalog-container wrapper">
         <header class="inner-header">
           <h1 class="inner-header-title">Гостиницы Седоны</h1>
           <ul class="breadcrumbs">
@@ -107,28 +107,28 @@
             </div>
           </form>
         </section>
-      </div>
-      <section class="sorting">
-        <h2 class="visually-hidden">Результат</h2>
-        <p>Найдено гостиниц: 38</p>
-        <label class="visually-hidden" for="sorting">Сортировка</label>
-        <select class="select-control" id="sorting" name="sorting">
-          <option value="cheap">Сначала дешёвые</option>
-          <option value="popular">Сначала популярные</option>
-          <option value="expensive">Сначала дорогие</option>
-        </select>
-        <div class="sorting-group">
-          <a class="button" href="#" aria-label="Показать плиткой"></a>
-          <a class="button" href="#" aria-label="Показать слайдшоу"></a>
-          <a class="button button-light" href="#" aria-label="Показать списком"></a>
-        </div>
       </section>
-      <section class="product-cards">
-        <h2 class="visually-hidden">Карточки гостиниц</h2>
-        <ul class="product-cards-list">
-          <li class="product-cards-item">
-            <div class="product-cards-description">
-              <a class="product-card-link" href="product1.html">
+      <div class="wrapper">
+        <section class="sorting">
+          <h2 class="visually-hidden">Результат</h2>
+          <p>Найдено гостиниц: 38</p>
+          <label class="visually-hidden" for="sorting">Сортировка</label>
+          <select class="select-control" id="sorting" name="sorting">
+            <option value="cheap">Сначала дешёвые</option>
+            <option value="popular">Сначала популярные</option>
+            <option value="expensive">Сначала дорогие</option>
+          </select>
+          <div class="sorting-group">
+            <a class="button" href="#" aria-label="Показать плиткой"></a>
+            <a class="button" href="#" aria-label="Показать слайдшоу"></a>
+            <a class="button button-light" href="#" aria-label="Показать списком"></a>
+          </div>
+        </section>
+        <section class="product-cards">
+          <h2 class="visually-hidden">Карточки гостиниц</h2>
+          <ul class="product-cards-list">
+            <li class="product-cards-item">
+              <a class="product-card-img" href="product1.html">
                 <img class="product-card-image" src="img/product-cards/amara.jpg" width="180" height="120" alt="Amara Resort & Spa">
               </a>
               <div class="product-card-container">
@@ -136,25 +136,23 @@
                   <h3 class="product-card-title">Amara Resort & Spa</h3>
                 </a>
                 <div class="type-house-description">
-                  <p class="product-card-type-house">Гостиница</p>
+                  <span class="product-card-type-house">Гостиница</span>
                   <span class="product-card-price">От 4000 ₽</span>
                 </div>
-                <div class="product-card-button">
+                <div class="product-card-button-container">
                   <a class="product-card-button button-details" href="#">Подробнее</a>
                   <a class="product-card-button button-favorites" href="#">В избранное</a>
                 </div>
               </div>
-              <div class="product-card-rating">
+              <div class="product-card-grade">
                 <div class="product-card-stars">
-                  <img class="product-card-stars" src="" width="" height="" alt="">
+                  <span class="visually-hidden">4 звезды</span>
                 </div>
                 <p class="product-card-rating">Рейтинг: 8,5</p>
               </div>
-            </div>
-          </li>
-          <li class="product-cards-item">
-            <div class="product-cards-description">
-              <a class="product-card-link" href="product2.html">
+            </li>
+            <li class="product-cards-item">
+              <a class="product-card-img" href="product2.html">
                 <img class="product-card-image" src="img/product-cards/desert.jpg" width="180" height="120" alt="Desert Quail Inn">
               </a>
               <div class="product-card-container">
@@ -162,25 +160,23 @@
                   <h3 class="product-card-title">Desert Quail Inn</h3>
                 </a>
                 <div class="type-house-description">
-                  <p class="product-card-type-house">Мотель</p>
+                  <span class="product-card-type-house">Мотель</span>
                   <span class="product-card-price">От 3000 ₽</span>
                 </div>
-                <div class="product-card-button">
+                <div class="product-card-button-container">
                   <a class="product-card-button button-details" href="#">Подробнее</a>
                   <a class="product-card-button button-favorites" href="#">В избранное</a>
                 </div>
               </div>
-              <div class="product-card-rating">
+              <div class="product-card-grade">
                 <div class="product-card-stars">
-                  <img class="product-card-stars" src="" width="" height="" alt="">
+                  <span class="visually-hidden">3 звезды</span>
                 </div>
                 <p class="product-card-rating">Рейтинг: 8,9</p>
               </div>
-            </div>
-          </li>
-          <li class="product-cards-item">
-            <div class="product-cards-description">
-              <a class="product-card-link" href="product3.html">
+            </li>
+            <li class="product-cards-item">
+              <a class="product-card-img" href="product3.html">
                 <img class="product-card-image" src="img/product-cards/villas.jpg" width="180" height="120" alt="Villas at Poco Diablo">
               </a>
               <div class="product-card-container">
@@ -188,25 +184,23 @@
                   <h3 class="product-card-title">Villas at Poco Diablo</h3>
                 </a>
                 <div class="type-house-description">
-                  <p class="product-card-type-house">Апартаменты</p>
+                  <span class="product-card-type-house">Апартаменты</span>
                   <span class="product-card-price">От 2000 ₽</span>
                 </div>
-                <div class="product-card-button">
+                <div class="product-card-button-container">
                   <a class="product-card-button button-details" href="#">Подробнее</a>
-                  <a class="product-card-button button-favorites" href="#">В избранное</a>
+                  <a class="product-card-button button-favorites button-favorites-select" href="#">В избранном</a>
                 </div>
               </div>
-              <div class="product-card-rating">
+              <div class="product-card-grade">
                 <div class="product-card-stars">
-                  <img class="product-card-stars" src="" width="" height="" alt="">
+                  <span class="visually-hidden">2 звезды</span>
                 </div>
                 <p class="product-card-rating">Рейтинг: 9,2</p>
               </div>
-            </div>
-          </li>
-          <li class="product-cards-item">
-            <div class="product-cards-description">
-              <a class="product-card-link" href="product4.html">
+            </li>
+            <li class="product-cards-item">
+              <a class="product-card-img" href="product4.html">
                 <img class="product-card-image" src="img/product-cards/greentree.jpg" width="180" height="120" alt="GreenTree Inn">
               </a>
               <div class="product-card-container">
@@ -214,52 +208,54 @@
                   <h3 class="product-card-title">GreenTree Inn</h3>
                 </a>
                 <div class="type-house-description">
-                  <p class="product-card-type-house">Гостиница</p>
+                  <span class="product-card-type-house">Гостиница</span>
                   <span class="product-card-price">От 3000 ₽</span>
                 </div>
-                <div class="product-card-button">
+                <div class="product-card-button-container">
                   <a class="product-card-button button-details" href="#">Подробнее</a>
                   <a class="product-card-button button-favorites" href="#">В избранное</a>
                 </div>
               </div>
-              <div class="product-card-rating">
+              <div class="product-card-grade">
                 <div class="product-card-stars">
-                  <img class="product-card-stars" src="" width="" height="" alt="">
+                  <span class="visually-hidden">2 звезды</span>
                 </div>
                 <p class="product-card-rating">Рейтинг: 9,2</p>
               </div>
-            </div>
-          </li>
-        </ul>
-        <button class="button pagination-show-more" type="button">Загрузить ещe</button>
-      </section>
-      <div class="pagination">
-        <ul class="pagination-list">
-          <li class="pagination-item">
-            <a class="pagination-link pagination-current">1</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">2</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">3</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">4</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">...</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">10</a>
-          </li>
-        </ul>
-        <label class="element-count" for="count">Гостиниц на странице</label>
-        <select class="select-control" id="count" name="count">
-          <option value="number">4</option>
-          <option value="number">8</option>
-          <option value="number">16</option>
-        </select>
+            </li>
+          </ul>
+          <div class="pagination-show-more-container">
+            <button class="button pagination-show-more" type="button">Загрузить ещё</button>
+          </div>
+        </section>
+        <div class="pagination">
+          <ul class="pagination-list">
+            <li class="pagination-item">
+              <a class="pagination-link pagination-current">1</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">2</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">3</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">4</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">...</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">10</a>
+            </li>
+          </ul>
+          <label class="element-count" for="count">Гостиниц на странице:</label>
+          <select class="select-control" id="count" name="count">
+            <option value="number">4</option>
+            <option value="number">8</option>
+            <option value="number">16</option>
+          </select>
+        </div>
       </div>
       <section class="newsletter newsletter-inner">
         <h2 class="newsletter-title">Подпишитесь на рассылку</h2>

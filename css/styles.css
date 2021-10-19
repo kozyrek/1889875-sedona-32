@@ -291,7 +291,7 @@ img {
 .newsletter h2 {
   max-width: 720px;
   margin: 0 auto;
-  padding-bottom: 27px;
+  padding-bottom: 29px;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -310,11 +310,17 @@ img {
 .newsletter-form {
   display: flex;
   max-width: 800px;
+  min-height: 60px;
   margin: 0 auto;
+  /*font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;*//*этот участок кода не имеет смысла,т.к. переопределяется .field и .newsletter-button*/
 }
 
 .field {
   width: 100%;
+  padding-left: 22px;
+  font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 26px;
@@ -331,6 +337,7 @@ img {
 .newsletter-button {
   flex-shrink: 0;
   width: 200px;
+  font-family: "PT Sans", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
@@ -394,18 +401,12 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   display: block;
-  margin: 0 -71px;
-  padding: 35px 0;
-}
-
-.inner-header,
-.catalog-container section {
-  margin: 0 71px;
+  padding-top: 35px;
+  padding-bottom: 69px;/*горизонтальные паддинги 71px заданы через класс wrapper*/
 }
 
 .inner-header-title {
-  margin: 0;
-  padding-bottom: 5px;
+  margin: 0 0 5px 0;/*по умолчанию верхний и нижний маргины у заголовка 50px, поэтому задала паддинг родителя 35px - расстояние по макету до заголовка*/
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
@@ -427,8 +428,6 @@ img {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1058px;
-  margin: 0;
 }
 
 .catalog-filter-title {
@@ -446,15 +445,10 @@ img {
   display: flex;
 }
 
-.catalog-filter-group {
-  display: flex;
-  flex-direction: column;
-  margin-left: 0;
-}
-
 .button-apply {
   width: 160px;
-  margin: 0;
+  display: block;
+  margin: 0 auto;
   padding: 13px;
   font-weight: 700;
   font-size: 16px;
@@ -469,6 +463,8 @@ img {
 
 .button-reset {
   width: 160px;
+  display: block;
+  margin: 0 auto;
   padding-top: 20px;
   font-weight: 400;
   font-size: 18px;
@@ -483,7 +479,7 @@ img {
   width: 100%;
   display: flex;
   margin: 0 auto;
-  padding: 15px 0 38px;
+  padding: 15px 0 10px;
   align-items: center;
   font-weight: 700;
   font-size: 30px;
@@ -515,7 +511,7 @@ img {
 .sorting-group {
   display: flex;
   margin-left: auto;
-  padding: 29px 0 32px 56px;
+  padding-left: 48px;
   align-items: center;
 }
 
@@ -530,67 +526,62 @@ img {
   margin: 0 auto;
   padding: 0;
   list-style: none;
+  border-top: 1px solid #e6e6e6;
 }
 
-.product-cards-description {/*карточка гостиницы*/
+.product-cards-item {/*карточка гостиницы*/
   display: flex;
-  margin-bottom: 58px;
+  align-items: flex-end;
+  padding: 28px 0 30px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.product-cards-img {/*картинка гостиницы*/
+  display: block;
+  width: 180px;
+  height: 120px;
 }
 
 .product-card-link {
   display: block;
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-  font-size: 24px;
   line-height: 31px;
   color: #000000;
   text-decoration: none;
 }
 
-.product-cards-description > .product-card-link {/*картинка гостиницы*/
-  margin: 0;
-  padding-top: 3px;
-  width: 180px;
-  height: 120px;
-}
-
 .product-card-container {/*блок с назв-м, типом, стоим, кнопками*/
   width: 100%;
   max-width: 400px;
-  margin: 0;
   padding-left: 36px;
 }
 
 .product-card-title {/*название гостиницы*/
   margin: 0;
-  padding-left: 1px;
+  padding-bottom: 1px;
+  /*padding-left: 1px;- скрыла временно до подгонки по perfect pixel*/
+  font-weight: 700;
+  font-size: 24px;
 }
 
-.type-house-description {/*блок с типом и стоимостью*/
-  display: flex;
-  align-items: center;
+.type-house-description span {
+  display: inline-block;
+  padding-bottom: 1px;
 }
 
-.product-card-type-house {/*тип гостиницы*/
+.product-card-type-house {
   width: 100%;
   max-width: 151px;
-  margin: 0;
-  padding: 1px 1px;
+  margin-right: 7px;
+  /*padding: 1px 1px;- скрыла временно до подгонки по perfect pixel*/
 }
 
-.product-card-price {/**стоимость*/
-  display: block;
-  margin-left: 7px;
-}
-
-.product-card-button {/*блок с кнопками*/
-  display: flex;
+.product-card-button-container {/*блок с кнопками*/
   padding-top: 30px;
 }
 
-.product-card-button a {/*кнопки*/
-  display: block;
+.product-card-button {/*кнопки*/
+  width: 100%;
+  display: inline-block;
   margin-right: 8px;
   padding: 8px;
   font-size: 16px;
@@ -605,31 +596,44 @@ img {
 
 .button-details {
   background-color: #756257;
-  width: 100%;
   max-width: 151px;
 }
 
 .button-favorites {
   background-color: #83b3d3;
-  width: 100%;
   max-width: 160px;
 }
 
-.product-card-rating {/*блок звезды и рейтинг*/
+.button-favorites-select {
+  background-color: #7db54f;
+}
+
+.product-card-grade {/*блок звезды и рейтинг*/
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   margin-left: auto;
-  width: 100%;
-  max-width: 160px;
-  border-radius: 4px;
 }
 
 .product-card-stars {
   height: 17px;
+  margin-bottom: 63px;
+  background-image: url("../img/background/four-stars.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.product-card-rating p {/*рейтинг*/
+.product-cards-item:nth-child(2) .product-card-stars {
+  background-image: url("../img/background/three-stars.svg");
+}
+
+.product-cards-item:nth-child(3) .product-card-stars,
+.product-cards-item:nth-child(4) .product-card-stars {
+  background-image: url("../img/background/two-stars.svg");
+}
+
+.product-card-rating {/*рейтинг*/
+  width: 160px;
   margin: 0;
   padding: 8px;
   font-weight: 400;
@@ -639,14 +643,22 @@ img {
   color: #333333;
   background-color: #f2f2f2;
   text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.pagination-show-more-container {/*обертка для оформления*/
+  padding-top: 31px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .pagination-show-more {
   display: block;
   width: 100%;
   max-width: 625px;
-  margin: 3px auto;
+  margin: 0 auto;
   padding: 15px;
+  font-family: "PT Sans", sans-serif;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
@@ -662,7 +674,7 @@ img {
   width: 100%;
   display: flex;
   margin: 0 auto;
-  padding-top: 61px;
+  padding-top: 31px;
   align-items: center;
 }
 
@@ -673,10 +685,14 @@ img {
   list-style: none;
 }
 
+.pagination-item {
+  margin-right: 8px;
+}
+
 .pagination-link {
   display: block;
-  width: 55px;
-  margin-right: 8px;
+  min-width: 55px;
+  min-height: 55px;
   padding: 15px;
   font-size: 20px;
   line-height: 26px;
@@ -686,6 +702,7 @@ img {
   background-color: #83b3d3;
   text-decoration: none;
   text-transform: uppercase;
+  border-radius: 4px;
 }
 
 .pagination-current {
@@ -694,8 +711,7 @@ img {
 }
 
 .element-count {
-  margin: 0;
-  padding: 0 51px 0 2px;
+  padding-right: 51px;
 }
 
 .pagination .select-control {
@@ -706,6 +722,7 @@ img {
 }
 
 .newsletter-inner {
+  padding: 89px 0 138px;
   background: none;
 }
 
@@ -729,5 +746,5 @@ footer,
 .sorting-group a,
 .product-card-stars,
 .product-card-rating {
-  outline: 1px solid #ff0000;/*вспомогат.обводка*/
-}
+  outline: 1px solid #ff0000;
+}/*вспомогат.обводка*/
