@@ -200,6 +200,22 @@ img {
   padding: 95px 82px 50px;
   font-weight: 400;
   background-color: rgba(131, 179, 211, 0.12);
+  background-repeat: no-repeat;
+}
+
+.advantages-item-home {
+  background-image: url("../img/icons/icon-home.svg");
+  background-position: 163px 89px;
+}
+
+.advantages-item-food {
+  background-image: url("../img/icons/icon-food.svg");
+  background-position: 163px 91px;
+}
+
+.advantages-item-souvenir {
+  background-image: url("../img/icons/icon-souvenir.svg");
+  background-position: 168px 85px;
 }
 
 .advantages-item-container {
