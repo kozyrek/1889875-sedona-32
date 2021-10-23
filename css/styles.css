@@ -50,6 +50,8 @@ body {
 img {
   display: block;
   margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .main-container {
@@ -58,6 +60,7 @@ img {
 
 .page-header-logo {
   position: relative;
+  left: 7px;
   z-index: 1;
   display: block;
   width: 138px;
@@ -68,9 +71,10 @@ img {
   display: flex;
   width: 100%;
   margin: 0 auto;
+  padding: 0 72px 0 59px;
 }
 
-.wrapper {
+.wrapper {/*селектор для каталога*/
   padding-left: 71px;
   padding-right: 71px;
 }
@@ -82,42 +86,49 @@ img {
   max-width: 450px;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
 }
 
 .navigation-other {
   margin: 0 0 0 auto;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .navigation-link {
+  display: block;
+  padding: 6px 12px;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
   color: #000000;
   text-decoration: none;
-  height: 26px;
 }
 
 .navigation-item {
-  margin: 0 33px 0 0;
+  margin: 0 9px 0 0;
+  padding: 13px 0;
+}
+
+.navigation-item-current {
+  border-bottom: 2px solid #756257;
 }
 
 .navigation-other-link {
   display: block;
-  margin-left: 20px;
+  margin-left: 1px;
+  min-width: 38px;
+  min-height: 38px;
 }
 
-.navigation-other-link-search {
-  width: 18px;
-  height: 18px;
+/*.navigation-other-link-search { - позже вставлю иконки
+  background-image: ;
 }
 
-.navigation-other-link-favorites {
-  width: 31px;
-  height: 17px;
-}
+.navigation-other-link-favorites { - позже вставлю иконки
+  background-image: ;
+}*/
 
 .navigation-other-btn {
   font-family: "PT Sans", sans-serif;
@@ -128,6 +139,7 @@ img {
   background-color: #756257;
   text-transform: uppercase;
   width: 160px;
+  margin-left: 23px;
   padding: 8px;
   border: none;
   border-radius: 4px;
@@ -140,7 +152,7 @@ img {
 
 .main-index-logo {
   background: url("../img/main-divider.svg"), url("../img/background/index-background.jpg");
-  background-size: 100% auto cover;
+  background-size: 100% auto, cover;
   background-repeat: no-repeat;
   background-position: bottom center;
   display: block;
@@ -311,9 +323,6 @@ img {
   max-width: 800px;
   min-height: 60px;
   margin: 0 auto;
-  /*font-weight: 700;
-  font-size: 20px;
-  line-height: 26px;*//*этот участок кода не имеет смысла,т.к. переопределяется .field и .newsletter-button*/
 }
 
 .field {
@@ -351,26 +360,37 @@ img {
   display: flex;
   width: 100%;
   margin-top: auto;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 24px 49px 26px 61px;
 }
 
 .social-list {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 149px;
   margin: 0 auto 0 0;
   padding: 0;
   list-style: none;
-  /*align-items: center; - это свойство не нужно?*/
+}
+
+.social-item {
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.social-item:nth-child(3n) {
+  margin-right: 0;
 }
 
 .social-link {
   display: block;
-  width: 20px;
-  height: 18px;
+  min-width: 40px;
+  min-height: 40px;
 }
 
 .contacts-phone {
   display: block;
+  padding: 15px;
   font-weight: 400;
   font-size: 40px;
   line-height: 40px;
@@ -381,8 +401,9 @@ img {
 
 .htmlacademy-link {
   display: block;
-  width: 115px;
+  min-width: 115px;
   margin-left: auto;
+  padding: 18px 23px;
 }
 
 .main-inner {
@@ -409,14 +430,22 @@ img {
   line-height: 78px;
 }
 
-.breadcrumbs {
+.breadcrumbs {/*список хлебные крошки*/
   display: flex;
-  margin: 0;
-  padding-bottom: 45px;
+  align-items: center;
+  margin: 0 0 45px 0;
+  padding: 0;
   list-style: none;
 }
 
+.breadcrumbs-item {/*пункт списка хлебные крошки*/
+  margin-right: 26px;
+}
+
 .breadcrumbs-link {
+  display: block;
+  min-width: 12px;
+  min-height: 12px;
   font-size: 16px;
   line-height: 21px;
 }
@@ -476,7 +505,7 @@ img {
   width: 100%;
   display: flex;
   margin: 0 auto;
-  padding: 15px 0 10px;
+  padding: 40px 0 38px;
   align-items: center;
   font-weight: 700;
   font-size: 30px;
@@ -486,7 +515,7 @@ img {
 }
 
 .sorting p {
-  margin-right: auto;
+  margin: 0 auto 0 0;
   padding: 5px 15px 5px 0;
 }
 
@@ -494,7 +523,9 @@ img {
   width: 287px;
   height: 48px;
   margin-left: auto;
-  padding-left: 19px;
+  margin-right: 81px;
+  padding-left: 17px;
+  font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 23px;
   font-weight: 400;
@@ -507,16 +538,20 @@ img {
 
 .sorting-group {
   display: flex;
-  margin-left: auto;
-  padding-left: 48px;
+  flex-wrap: wrap;
+  max-width: 160px;
   align-items: center;
 }
 
 .sorting-group a {
   display: block;
-  margin-left: 8px;
+  margin: 4px 8px 4px 0;
   width: 48px;
   height: 48px;
+}
+
+.sorting-group a:nth-child(3n) {
+  margin: 4px 0;
 }
 
 .product-cards-list {/*список гостиниц*/
@@ -682,7 +717,7 @@ img {
   list-style: none;
 }
 
-.pagination-item {
+.pagination-item:not(:last-child) {
   margin-right: 8px;
 }
 
@@ -698,7 +733,6 @@ img {
   color: #ffffff;
   background-color: #83b3d3;
   text-decoration: none;
-  text-transform: uppercase;
   border-radius: 4px;
 }
 
@@ -708,14 +742,15 @@ img {
 }
 
 .element-count {
-  padding-right: 51px;
+  margin-left: auto;
+  margin-right: 51px;
 }
 
 .pagination .select-control {
   width: 160px;
   height: 48px;
   margin: 0;
-  padding-left: 17px;
+  padding-left: 15px;
 }
 
 .newsletter-inner {
@@ -739,6 +774,8 @@ section,
 footer,
 .social-link,
 .breadcrumbs-link,
+.navigation-item,
+.navigation-link,
 .sorting-group,
 .sorting-group a,
 .product-card-stars,
