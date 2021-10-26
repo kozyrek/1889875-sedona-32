@@ -119,9 +119,9 @@
             <option value="expensive">Сначала дорогие</option>
           </select>
           <div class="sorting-group">
-            <a class="button" href="#" aria-label="Показать плиткой"></a>
-            <a class="button" href="#" aria-label="Показать слайдшоу"></a>
-            <a class="button button-light" href="#" aria-label="Показать списком"></a>
+            <a class="button sorting-tile" href="#" aria-label="Показать плиткой"></a>
+            <a class="button sorting-slideshow" href="#" aria-label="Показать слайдшоу"></a>
+            <a class="button sorting-list button-light" href="#" aria-label="Показать списком"></a>
           </div>
         </section>
         <section class="product-cards">
@@ -256,12 +256,14 @@
               <a class="pagination-link" href="#">10</a>
             </li>
           </ul>
-          <label class="element-count" for="count">Гостиниц на странице:</label>
-          <select class="select-control" id="count" name="count">
-            <option value="number">4</option>
-            <option value="number">8</option>
-            <option value="number">16</option>
-          </select>
+          <div class="count-container">
+            <label class="element-count" for="count">Гостиниц на странице:</label>
+            <select class="select-control" id="count" name="count">
+              <option value="number">4</option>
+              <option value="number">8</option>
+              <option value="number">16</option>
+            </select>
+          </div>
         </div>
       </div>
       <section class="newsletter newsletter-inner">
@@ -277,10 +279,10 @@
     <footer class="main-footer">
       <ul class="social-list">
         <li class="social-item">
-          <a class="social-link button" href="https://www.facebook.com/htmlacademy" aria-label="Facebook"></a>
+          <a class="social-link button" href="https://twitter.com/htmlacademy_ru" aria-label="Twitter"></a>
         </li>
         <li class="social-item">
-          <a class="social-link button" href="https://twitter.com/htmlacademy_ru" aria-label="Twitter"></a>
+          <a class="social-link button" href="https://www.facebook.com/htmlacademy" aria-label="Facebook"></a>
         </li>
         <li class="social-item">
           <a class="social-link button" href="https://www.youtube.com/c/HTMLAcademyRUS" aria-label="Youtube"></a>
