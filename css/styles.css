@@ -598,59 +598,52 @@ img {
 }
 
 .product-cards-item {/*карточка гостиницы*/
-  display: flex;
-  align-items: flex-end;
-  padding: 28px 0 30px;
+  padding: 27px 0 30px;
+  display: grid;
+  grid-template-columns: 180px 36px auto 7px auto 1fr 160px;
+  grid-template-rows: auto auto 1fr;
+  gap: 0px 0px;
+  grid-template-areas: 
+    "picture . title title title title stars"
+    "picture . type . price . ."
+    "picture . details . favorites . rating";
   /*border-bottom: 1px solid #e6e6e6; - добавлю позже через псевдоэлемент*/
 }
 
-.product-cards-img {/*картинка гостиницы*/
+.product-card-img {/*картинка гостиницы*/
   display: block;
   width: 180px;
   height: 120px;
+  margin-top: 4px;
+  grid-area: picture;
+  object-fit: cover;
 }
 
 .product-card-link {
-  display: block;
+  grid-area: title;
   line-height: 31px;
   color: #000000;
   text-decoration: none;
 }
 
-.product-card-container {/*блок с назв-м, типом, стоим, кнопками*/
-  width: 100%;
-  max-width: 400px;
-  padding-left: 36px;
-}
-
 .product-card-title {/*название гостиницы*/
-  margin: 0;
-  padding-bottom: 1px;
-  /*padding-left: 1px;- скрыла временно до подгонки по perfect pixel*/
+  margin: 0 0 1px;
+  padding-left: 1px;/*подгонка по perfect pixel*/
   font-weight: 700;
   font-size: 24px;
 }
 
-.type-house-description span {
-  display: inline-block;
-  padding-bottom: 1px;
-}
-
 .product-card-type-house {
-  width: 100%;
-  max-width: 151px;
-  margin-right: 7px;
-  /*padding: 1px 1px;- скрыла временно до подгонки по perfect pixel*/
+  grid-area: type;
+  padding-left: 1px;/*подгонка по perfect pixel*/
 }
 
-.product-card-button-container {/*блок с кнопками*/
-  padding-top: 30px;
+.product-card-price {
+  grid-area: price;
 }
 
 .product-card-button {/*кнопки*/
-  width: 100%;
-  display: inline-block;
-  margin-right: 8px;
+  margin-top: auto;
   padding: 8px;
   font-size: 16px;
   line-height: 21px;
@@ -663,28 +656,25 @@ img {
 }
 
 .button-details {
+  grid-area: details;
   background-color: #756257;
-  max-width: 151px;
+  width: 151px;
 }
 
 .button-favorites {
+  grid-area: favorites;
   background-color: #83b3d3;
-  max-width: 160px;
+  width: 160px;
+  margin-left: 1px;/*подгонка по perfect pixel*/
 }
 
 .button-favorites-select {
   background-color: #7db54f;
 }
 
-.product-card-grade {/*блок звезды и рейтинг*/
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-}
-
 .product-card-stars {
-  margin-bottom: 64px;
-  padding-top: 5px;
+  grid-area: stars;
+  padding-top: 7px;
   display: flex;
   justify-content: center;
 }
@@ -701,8 +691,9 @@ img {
 }
 
 .product-card-rating {/*рейтинг*/
+  grid-area: rating;
   width: 160px;
-  margin: 0;
+  margin: auto 0 0;
   padding: 8px;
   font-weight: 400;
   font-size: 16px;
