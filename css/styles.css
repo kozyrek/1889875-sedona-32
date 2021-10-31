@@ -106,31 +106,61 @@ img {
   font-weight: 700;
   color: #000000;
   text-decoration: none;
+  border-radius: 10px;
 }
 
 .navigation-item {
+  position: relative;
   margin: 0 9px 0 0;
   padding: 13px 0;
 }
 
-.navigation-item-current {
-  border-bottom: 2px solid #756257;
+.navigation-link-current::after {
+  position: absolute;
+  content: "";
+  background-color: #756257;
+  height: 2px;
+  right: 12px;
+  bottom: 0;
+  left: 12px;
 }
 
 .navigation-other-link {
+  position: relative;
   display: block;
   margin-left: 1px;
   min-width: 38px;
   min-height: 38px;
+  border-radius: 10px;
+  color: #ffffff;
 }
 
-/*.navigation-other-link-search { - позже вставлю иконки
-  background-image: ;
+.navigation-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #000000;
 }
 
-.navigation-other-link-favorites { - позже вставлю иконки
-  background-image: ;
-}*/
+.navigation-other-link-favorites::before {
+  position: absolute;
+  top: 0;
+  left: 22px;
+  content: "12";
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: #7db54f;
+  font-weight: 400;
+  line-height: 13px;
+  font-size: 10px;
+  z-index: 1;
+  display: inline-block;
+  padding: 3px 0;
+}
 
 .navigation-other-btn {
   font-family: "PT Sans", sans-serif;
@@ -145,8 +175,60 @@ img {
   padding: 8px;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
+}
+/*-------------------------------------------------состояния для навиг.меню*/
+.navigation-link:hover,
+.navigation-link:focus,
+.navigation-link:active {
+  color: #756257;
 }
 
+.navigation-link:focus {
+  box-shadow: inset 0 0 0 3px #83b3d3;
+  outline: none;
+}
+
+.navigation-link:active {
+  opacity: 30%;
+  box-shadow: none;
+}
+/*--------------------------------------------------состояния для меню пользователя*/
+.navigation-other-link:hover .navigation-icon,
+.navigation-other-link:focus .navigation-icon,
+.navigation-other-link:active .navigation-icon {
+  fill: #756257;
+}
+
+.navigation-other-link:focus {
+  box-shadow: inset 0 0 0 3px #83b3d3;
+  outline: none;
+}
+
+.navigation-other-link:active {
+  color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+.navigation-other-link:active .navigation-icon {
+  opacity: 30%;
+}
+/*--------------------------------------------------состояния для кнопки "хочу сюда!"*/
+.navigation-other-btn:hover,
+.navigation-other-btn:focus,
+.navigation-other-btn:active {
+  background-color: #615048;
+}
+
+.navigation-other-btn:focus {
+  outline: 3px solid #83b3d3;
+}
+
+.navigation-other-btn:active {
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+/*---------------------------------------------------------------------*/
 .main-index-logo img {
   width: 100%;
   max-width: 458px;
@@ -308,6 +390,22 @@ img {
   border-radius: 10px;
 }
 
+.search-link:hover,
+.search-link:focus,
+.search-link:active {
+  background-color: #615048;
+}
+
+.search-link:focus {
+  box-shadow: inset 0 0 0 3px #83b3d3;
+  outline: none;
+}
+
+.search-link:active {
+  color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
 .newsletter {
   padding: 94px 0 94px;
   text-align: center;
@@ -346,6 +444,7 @@ img {
 .field {
   width: 100%;
   padding-left: 22px;
+  padding-right: 22px;
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -369,11 +468,56 @@ img {
   line-height: 26px;
   color: #ffffff;
   text-transform: uppercase;
-  background: #83b3d3;
+  background-color: #83b3d3;
   border: none;
   border-radius: 0 10px 10px 0;
+  cursor: pointer;
+}
+/*-------------------------------------------------------состояния для поля формы*/
+.field:hover,
+.field:focus {
+  background-color: #e5e5e5;
 }
 
+.field:focus {
+  outline: 3px solid #83b3d3;
+}
+
+.field:active {
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 2px #000000;
+  outline: none;
+}
+
+.error {
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 2px #ff5757;
+  outline: none;
+}
+/*-------------------------------------------------------состояния для кнопки формы*/
+.newsletter-button:hover,
+.newsletter-button:focus,
+.newsletter-button:active {
+  background-color: #68a2cA;
+}
+
+.newsletter-button:focus {
+  outline: 3px solid #756257;
+}
+
+.newsletter-button:active {
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.newsletter-button:disabled,
+.newsletter-button:disabled:hover {
+  color: #e7e7e7;
+  background-color: #595959;
+  outline: none;
+  cursor: default;
+}
+/*----------------------------------------------------------------------------------*/
 .main-footer {
   display: flex;
   width: 100%;
@@ -401,29 +545,108 @@ img {
 }
 
 .social-link {
+  position: relative;
   display: block;
   min-width: 40px;
   min-height: 40px;
+  border-radius: 10px;
 }
 
+.social-link-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #83b3d3;
+}
+/*-------------------------------------------------состояния для списка соц.сетей*/
+.social-link:hover .social-link-icon,
+.social-link:focus .social-link-icon,
+.social-link:active .social-link-icon {
+  fill: #68a2cA;
+}
+
+.social-link:focus {
+  box-shadow: inset 0 0 0 3px #83b3d3;
+  outline: none;
+}
+
+.social-link:active {
+  box-shadow: none;
+}
+
+.social-link:active .social-link-icon {
+  opacity: 30%;
+}
+/*----------------------------------------------------------------------------------*/
 .contacts-phone {
   display: block;
-  padding: 15px;
+  padding: 12px 15px 18px;
   font-weight: 400;
   font-size: 40px;
   line-height: 40px;
   color: #000000;
   text-transform: uppercase;
   text-decoration: none;
+  border-radius: 10px;
+}
+/*-------------------------------------------------состояния для номера конт.телефона*/
+.contacts-phone:hover,
+.contacts-phone:focus,
+.contacts-phone:active {
+  color: #756257;
 }
 
+.contacts-phone:focus {
+  box-shadow: inset 0 0 0 3px #83b3d3;
+  outline: none;
+}
+
+.contacts-phone:active {
+  opacity: 30%;
+  box-shadow: none;
+}
+/*----------------------------------------------------------------------------------*/
 .htmlacademy-link {
+  position: relative;
   display: block;
-  min-width: 115px;
+  width: 161px;
+  height: 70px;/*добавила фиксированные ширину и высоту, иначе padding ссылки схлопывался с margin svg*/
   margin-left: auto;
-  padding: 18px 23px;
+  border-radius: 10px;
 }
 
+.htmlacademy-link-logo {/*логотип академии через svg*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #000000;
+}
+/*-------------------------------------------------состояния для лого академии*/
+.htmlacademy-link:hover .htmlacademy-link-logo,
+.htmlacademy-link:focus .htmlacademy-link-logo,
+.htmlacademy-link:active .htmlacademy-link-logo {
+  fill: #756257;
+}
+
+.htmlacademy-link:focus {
+  box-shadow: inset 0 0 0 3px #83b3d3;
+  outline: none;
+}
+
+.htmlacademy-link:active {
+  box-shadow: none;
+}
+
+.htmlacademy-link:active .htmlacademy-link-logo {
+  opacity: 30%;
+}
+/*----------------------------------------------------------------------------------*/
 .main-inner {
   font-weight: 400;
   font-size: 18px;
@@ -457,15 +680,33 @@ img {
 }
 
 .breadcrumbs-item {/*пункт списка хлебные крошки*/
-  margin-right: 26px;
+  margin-right: 10px;
+  padding-right: 16px;
 }
 
 .breadcrumbs-link {
+  position: relative;
   display: block;
   min-width: 12px;
   min-height: 12px;
   font-size: 16px;
   line-height: 21px;
+}
+
+.breadcrumbs-item:not(:last-child) {
+  background-image: url("../img/background/nav-icon.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+} 
+
+.breadcrumbs-link-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #ffffff;
 }
 
 .catalog-filter {
