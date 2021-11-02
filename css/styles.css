@@ -178,18 +178,18 @@ img {
   cursor: pointer;
 }
 /*-------------------------------------------------состояния для навиг.меню*/
-.navigation-link:hover,
-.navigation-link:focus,
-.navigation-link:active {
+.navigation-link[href]:hover,
+.navigation-link[href]:focus,
+.navigation-link[href]:active {
   color: #756257;
 }
 
-.navigation-link:focus {
+.navigation-link[href]:focus {
   box-shadow: inset 0 0 0 3px #83b3d3;
   outline: none;
 }
 
-.navigation-link:active {
+.navigation-link[href]:active {
   opacity: 30%;
   box-shadow: none;
 }
@@ -206,7 +206,7 @@ img {
 }
 
 .navigation-other-link:active {
-  color: rgba(255, 255, 255, 0.3);
+  opacity: 30%;
   box-shadow: none;
 }
 
@@ -660,15 +660,16 @@ img {
   background-image: url("../img/background/catalog-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 35px;
+  padding-top: 32px;
   padding-bottom: 69px;/*горизонтальные паддинги 71px заданы через класс wrapper*/
 }
 
 .inner-header-title {
-  margin: 0 0 5px 0;/*по умолчанию верхний и нижний маргины у заголовка 50px, поэтому задала паддинг родителя 35px - расстояние по макету до заголовка*/
+  margin: 0 0 4px 0;
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
+  height: 68px;
 }
 
 .breadcrumbs {/*список хлебные крошки*/
@@ -680,8 +681,8 @@ img {
 }
 
 .breadcrumbs-item {/*пункт списка хлебные крошки*/
-  margin-right: 10px;
-  padding-right: 16px;
+  margin-right: 2px;
+  padding-right: 13px;
 }
 
 .breadcrumbs-link {
@@ -689,10 +690,36 @@ img {
   display: block;
   min-width: 12px;
   min-height: 12px;
+  padding: 3px 8px;
   font-size: 16px;
   line-height: 21px;
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+/*----------------------------------------------------------------состояния для хлебных крошек*/
+ 
+.breadcrumbs-link:hover {
+  opacity: 60%;
 }
 
+.breadcrumbs-link:focus {
+  box-shadow: inset 0 0 0 3px #83b3d3;
+  outline: none;
+}
+.breadcrumbs-item:first-of-type .breadcrumbs-link:focus {
+  outline: 3px solid #83b3d3;
+  outline-offset: 4px;
+  box-shadow: none;
+}
+
+.breadcrumbs-item:first-of-type .breadcrumbs-link:active,
+.breadcrumbs-link:active {
+  opacity: 30%;
+  box-shadow: none;
+  outline: none;
+}
+/*--------------------------------------------------------------------------------------------*/
 .breadcrumbs-item:not(:last-child) {
   background-image: url("../img/background/nav-icon.svg");
   background-repeat: no-repeat;
@@ -733,8 +760,9 @@ img {
 .button-apply {
   width: 160px;
   display: block;
-  margin: 0 auto;
+  margin: 59px auto 15.5px;
   padding: 13px;
+  font-family: "PT Sans", sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 21px;
@@ -744,13 +772,30 @@ img {
   text-transform: uppercase;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
+}
+/*----------------------------------------------------------------состояния для кнопки Применить*/
+.button-apply:hover,
+.button-apply:focus,
+.button-apply:active {
+  background-color: #68a2cA;
 }
 
+.button-apply:focus {
+  outline: 3px solid #ffffff;
+}
+
+.button-apply:active {
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+/*----------------------------------------------------------------------------------------------*/
 .button-reset {
-  width: 160px;
+  width: 100px;
   display: block;
   margin: 0 auto;
-  padding-top: 20px;
+  padding: 4.5px 0;
+  font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 23px;
@@ -758,8 +803,24 @@ img {
   color: #ffffff;
   background-color: transparent;
   border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/*-----------------------------------------------------------------состояния для кнопки Сбросить*/
+.button-reset:hover {
+  opacity: 60%;
 }
 
+.button-reset:focus {
+  box-shadow: inset 0 0 0 3px #83b3d3;
+  outline: none;
+}
+
+.button-reset:active {
+  opacity: 30%;
+  box-shadow: none;
+}
+/*----------------------------------------------------------------------------------------------*/
 .sorting {
   width: 100%;
   display: flex;
@@ -790,8 +851,27 @@ img {
   font-weight: 400;
   text-align: left;
   color: #333333;
-  border: 2px solid #e6e6e6;
+  border: 2px solid #e5e5e5;
   border-radius: 4px;
+  background-image: url("../img/background/dropdown.svg");
+  background-repeat: no-repeat;
+  background-position: right 19px center;
+  appearance: none;
+}
+
+.select-control:hover,
+.select-control:focus {
+  border: 2px solid #83b3d3;
+}
+
+.select-control:focus {
+  outline: none;
+}
+
+.select-control:active {
+  color: rgba(0, 0, 0, 0.3);
+  border-color:#e5e5e5;
+  background-image: url("../img/background/dropdown-opacity.svg");/*если задавать opacity то бледнеет весь элемент, в т.ч. и граница, а по макету она не должна изменяться*/
 }
 
 .sorting-group {
@@ -808,7 +888,7 @@ img {
   height: 48px;
   background-position: center;
   background-repeat: no-repeat;
-  border: 2px solid #e6e6e6;
+  box-shadow: inset 0 0 0 2px #e6e6e6;
   border-radius: 4px;
 }
 
@@ -827,25 +907,60 @@ img {
 .sorting-list {
   background-image: url("../img/icons/mode-list.svg");
 }
-
-.sorting-list.button-light {
-  border: 2px solid #000000;
-  border-radius: 4px;
+/*----------------------------------------------------------------------состояния для сортировки*/
+.sorting-group a:hover,
+.sorting-group a:focus {
+  box-shadow: inset 0 0 0 2px #83b3d3;
+  outline: none;
+}
+.sorting-group a:active {/*в макете данное состояние не прописано*/
+  opacity: 30%;
+  box-shadow: none;
 }
 
+.sorting-list.button-light,
+.sorting-list.button-light:hover,
+.sorting-list.button-light:focus,
+.sorting-list.button-light:active {
+  box-shadow: inset 0 0 0 2px #000000;
+  opacity: 100%;
+}
+/*----------------------------------------------------------------------------------------------*/
 .product-cards-list {/*список гостиниц*/
   margin: 0 auto;
   padding: 0;
   list-style: none;
-  /*border-top: 1px solid #e6e6e6; - добавлю позже через псевдоэлемент*/
+  position: relative;
+}
+
+.product-cards-list::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 1px;
+  background-color: #e5e5e5;
 }
 
 .product-cards-item {/*карточка гостиницы*/
   display: grid;
   grid-template-columns: 180px 1fr 160px;
-  gap: 36px;
+  gap: 31px;
   padding: 27px 0 30px;
-  /*border-bottom: 1px solid #e6e6e6; - добавлю позже через псевдоэлемент*/
+  position: relative;
+}
+
+li.product-cards-item:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 1px;
+  background-color: #e5e5e5;
 }
 
 .product-card-img {/*картинка гостиницы*/
@@ -853,24 +968,60 @@ img {
   width: 180px;
   height: 120px;
 }
+/*------------------------------------------------------состояния для картинки карточки гостиницы*/
+.product-card-img:hover  {
+  opacity: 60%;
+}
 
+.product-card-img:focus  {
+  outline: 3px solid #83b3d3;
+}
+
+.product-card-img:active  {
+  opacity: 30%;
+  outline: none;
+}
+/*------------------------------------------------------------------------------------------------*/
 .product-card-link {
   display: block;
   line-height: 31px;
   color: #000000;
   text-decoration: none;
 }
+/*----------------------------------------------------------------состояния для названия гостиницы*/
+.product-card-link:hover .product-card-title,
+.product-card-link:focus .product-card-title,
+.product-card-link:active .product-card-title {
+  color: #756257;
+}
 
+.product-card-link:focus .product-card-title {
+  outline: 3px solid #83b3d3;
+  outline-offset: 6px;
+}
+
+.product-card-link:focus {
+  outline: none;
+}
+
+.product-card-link:active .product-card-title {
+  opacity: 30%;
+  outline: none;
+}
+/*------------------------------------------------------------------------------------------------*/
 .product-card-container {/*блок с назв-м, типом, стоим, кнопками*/
   width: 100%;
   max-width: 400px;
 }
 
 .product-card-title {/*название гостиницы*/
+  display: inline-block;
   margin: 0;
   padding-bottom: 1px;
   font-weight: 700;
   font-size: 24px;
+  border-radius: 2px;
+  padding: 0 8px 2px 6px;
 }
 
 .type-house-description span {
@@ -882,6 +1033,7 @@ img {
   width: 100%;
   max-width: 151px;
   margin-right: 7px;
+  padding-left: 5px;
 }
 
 .product-card-price {
@@ -896,7 +1048,7 @@ img {
 .product-card-button {/*кнопки*/
   width: 100%;
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 4px;
   padding: 8px;
   font-size: 16px;
   line-height: 21px;
@@ -911,6 +1063,7 @@ img {
 .button-details {
   background-color: #756257;
   max-width: 151px;
+  margin-left: 5px;
 }
 
 .button-favorites {
@@ -921,7 +1074,56 @@ img {
 .button-favorites-select {
   background-color: #7db54f;
 }
+/*----------------------------------------------------состояния для кнопки Подробнее карточек гостиниц*/
+.button-details:hover,
+.button-details:focus,
+.button-details:active {
+  background-color: #615048;
+}
 
+.button-details:focus {
+  outline: 3px solid #83b3d3;
+}
+
+.button-details:active {
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+/*----------------------------------------------------состояния для кнопки В избранное карточек гостиниц*/
+.button-favorites:hover,
+.button-favorites:focus,
+.button-favorites:active {
+  background-color: #68a2cA;
+  box-shadow: inset 0 0 0 1px #756257;
+}
+
+.button-favorites:focus {
+  outline: 3px solid #756257;
+  box-shadow: none;
+}
+
+.button-favorites:active {
+  color: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0 1px #756257;
+  outline: none;
+}
+/*------------------------------------------------------------------состояния для кнопки В избранном */
+.button-favorites-select:hover ,
+.button-favorites-select:focus,
+.button-favorites-select:active {
+  background-color: #6C9E42;
+  box-shadow: none;/*тень наследуется от .button-favorites:active*/
+}
+
+.button-favorites-select:focus {
+  outline: 3px solid #756257;
+}
+
+.button-favorites-select:active {
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+/*---------------------------------------------------------------------------------------------------*/
 .product-card-grade {/*блок звезды и рейтинг*/
   display: flex;
   flex-direction: column;
@@ -963,7 +1165,18 @@ img {
 .pagination-show-more-container {/*обертка для оформления*/
   padding-top: 31px;
   padding-bottom: 30px;
-  /*border-bottom: 1px solid #e6e6e6; - добавлю позже через псевдоэлемент*/
+  position: relative;
+}
+
+.pagination-show-more-container::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 1px;
+  background-color: #e5e5e5;
 }
 
 .pagination-show-more {
@@ -977,13 +1190,29 @@ img {
   line-height: 26px;
   font-weight: 700;
   text-align: center;
+  text-decoration: none;
   color: #ffffff;
   background-color: #83b3d3;
   text-transform: uppercase;
   border: none;
   border-radius: 4px;
 }
+/*------------------------------------------------состояния для Загрузить еще (в макете не указано)*/
+.pagination-show-more:hover,
+.pagination-show-more:focus,
+.pagination-show-more:active {
+  background-color: #68a2cA;
+}
 
+.pagination-show-more:focus {
+  outline: 3px solid #756257;
+}
+
+.pagination-show-more:active {
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+/*-------------------------------------------------------------------------------------------------*/
 .pagination {
   width: 100%;
   display: flex;
@@ -1019,8 +1248,23 @@ img {
   text-decoration: none;
   border-radius: 4px;
 }
+/*-----------------------------------------------------------состояния для пагинации*/
+.pagination-link:hover,
+.pagination-link:focus,
+.pagination-link:active {
+  background-color: #68a2cA;
+}
 
-.pagination-current {
+.pagination-link:focus {
+  outline: 3px solid #756257;
+}
+
+.pagination-link:active {
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+/*----------------------------------------------------------------------------------*/
+.pagination-item .pagination-current {
   color: #000000;
   background-color: #f2f2f2;
 }
