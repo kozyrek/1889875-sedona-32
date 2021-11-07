@@ -22,7 +22,6 @@
 
 body {
   width: 100%;
-  max-width: 1280px;/*нужно ли добавить максимальную ширину для body?*/
   background-color: #f2f2f2;
   margin: 0 auto;
 }

@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Сайт города Седона</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
   </head>
   <body>
     <div class="container">
@@ -131,7 +133,7 @@
           <li class="advantages-item">
             <h3 class="advantages-title">Небольшая площадь</h3>
             <p class="advantages-description">— №3 —</p>
-            <p class="advantages-description">Все достопримечательности &emsp;находятся очень близко</p>
+            <p class="advantages-description">Все&nbsp;достопримечательности &emsp;находятся очень близко</p>
           </li>
           <li class="advantages-item advantages-item-road">
             <h3 class="advantages-title">Красивая дорога</h3>
@@ -201,65 +203,65 @@
             </svg>
         </a>
       </footer>
-    </div>
-    <div class="modal-container modal-container-close">
-      <div class="modal modal-search">
-        <button class="modal-close-button">
-          <span class="visually-hidden">Закрыть</span>
-          <svg class="modal-close-icon" aria-hidden="true" focusable="false" viewBox="0 0 13 13" width="13" height="13" fill="black" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 1.2 11.8 0 6.5 5.3 1.2 0 0 1.2l5.3 5.3L0 11.8 1.2 13l5.3-5.3 5.3 5.3 1.2-1.2-5.3-5.3L13 1.2Z"/>
-          </svg>
-        </button>
-        <section class="modal-content">
-          <h2 class="modal-content-title">Поиск гостиницы в Седоне</h2>
-          <form action="https://echo.htmlacademy.ru/courses" method="POST">
-            <div class="modal-content-container"> 
-              <label class="modal-label" for="arrival">Дата заезда:</label>
-              <input class="modal-field" type="text" name="date-arrival" placeholder="Выберите дату" value="27 апреля 2020" id="arrival" required>
-              <span class="datepicker-toggle-button"></span>
-              <span class="modal-message error-message">Мы не можем отправить вас в прошлое.</span>
-            </div>            
-            <div class="modal-content-container">
-              <label class="modal-label" for="exit">Дата выезда:</label>
-              <input class="modal-field" type="text" name="date-exit" placeholder="Выберите дату" value="1 сентября 2021" id="exit" required>
-              <span class="datepicker-toggle-button"></span>
-              <span class="modal-message">На эти даты есть свободные номера. Пока есть.</span>
-            </div>            
-            <div class="modal-content-container-inner">
+      <div class="modal-container modal-container-close">
+        <div class="modal modal-search">
+          <button class="modal-close-button">
+            <span class="visually-hidden">Закрыть</span>
+            <svg class="modal-close-icon" aria-hidden="true" focusable="false" viewBox="0 0 13 13" width="13" height="13" fill="black" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 1.2 11.8 0 6.5 5.3 1.2 0 0 1.2l5.3 5.3L0 11.8 1.2 13l5.3-5.3 5.3 5.3 1.2-1.2-5.3-5.3L13 1.2Z"/>
+            </svg>
+          </button>
+          <section class="modal-content">
+            <h2 class="modal-content-title">Поиск гостиницы в Седоне</h2>
+            <form action="https://echo.htmlacademy.ru/courses" method="POST">
               <div class="modal-content-container"> 
-                <label class="modal-label" for="adults">Взрослые:</label>
-                <div class="modal-field-container">
-                  <input class="modal-field" type="number" name="number" placeholder="" value="2" id="adults" min="1" required>
-                  <button class="modal-button button-minus" type="button">
-                    <span class="visually-hidden">Меньше</span>
-                  </button>
-                  <button class="modal-button button-plus" type="button">
-                    <span class="visually-hidden">Больше</span>
-                  </button>
-                </div>
-              </div>
+                <label class="modal-label" for="arrival">Дата заезда:</label>
+                <input class="modal-field" type="text" name="date-arrival" placeholder="Выберите дату" value="27 апреля 2020" id="arrival" required>
+                <span class="datepicker-toggle-button"></span>
+                <span class="modal-message error-message">Мы не можем отправить вас в прошлое.</span>
+              </div>            
               <div class="modal-content-container">
-                <label class="modal-label" for="children">Дети:</label>
-                <div class="modal-tooltip modal-tooltip-open">
-                  <button class="modal-tooltip-info-button" type="button">
-                    <span class="visually-hidden">Посмотреть дополнительную информацию</span>
-                  </button>
-                  <p class="modal-tooltip-description">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</p>
-                </div>                
-                <div class="modal-field-container">
-                  <input class="modal-field" type="number" name="number" placeholder="" value="1" id="children" min="0">
-                  <button class="modal-button button-minus" type="button">
-                    <span class="visually-hidden">Меньше</span>
-                  </button>
-                  <button class="modal-button button-plus" type="button">
-                    <span class="visually-hidden">Больше</span>
-                  </button>
+                <label class="modal-label" for="exit">Дата выезда:</label>
+                <input class="modal-field" type="text" name="date-exit" placeholder="Выберите дату" value="1 сентября 2021" id="exit" required>
+                <span class="datepicker-toggle-button"></span>
+                <span class="modal-message">На эти даты есть свободные номера. Пока есть.</span>
+              </div>            
+              <div class="modal-content-container-inner">
+                <div class="modal-content-container"> 
+                  <label class="modal-label" for="adults">Взрослые:</label>
+                  <div class="modal-field-container">
+                    <input class="modal-field" type="number" name="number" placeholder="" value="2" id="adults" min="1" required>
+                    <button class="modal-button button-minus" type="button">
+                      <span class="visually-hidden">Меньше</span>
+                    </button>
+                    <button class="modal-button button-plus" type="button">
+                      <span class="visually-hidden">Больше</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="modal-content-container">
+                  <label class="modal-label" for="children">Дети:</label>
+                  <div class="modal-tooltip modal-tooltip-open">
+                    <button class="modal-tooltip-info-button" type="button">
+                      <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                    </button>
+                    <p class="modal-tooltip-description">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</p>
+                  </div>                
+                  <div class="modal-field-container">
+                    <input class="modal-field" type="number" name="number" placeholder="" value="1" id="children" min="0">
+                    <button class="modal-button button-minus" type="button">
+                      <span class="visually-hidden">Меньше</span>
+                    </button>
+                    <button class="modal-button button-plus" type="button">
+                      <span class="visually-hidden">Больше</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <button class="modal-search-submit-button" type="submit">Найти</button>
-          </form>
-        </section>
+              <button class="modal-search-submit-button" type="submit">Найти</button>
+            </form>
+          </section>
+        </div>
       </div>
     </div>
   </body>
