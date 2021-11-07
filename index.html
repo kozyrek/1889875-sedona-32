@@ -36,6 +36,46 @@
               </svg>
               <span class="favorites">12</span>
             </a>
+            <div class="popover popover-favorites"><!--на данном теге устанавливается доп класс .popover-open для открытия попапа-->
+              <div class="popover-content">
+                <h2 class="popover-title visually-hidden">Избранное</h2>
+                <ul class="popover-list">
+                  <li class="popover-item">
+                    <a class="popover-item-link" href="product2.html">
+                      <img class="popover-item-image" src="img/product-cards/desert.jpg" width="48" height="48" alt="Desert Quail Inn">
+                      <div class="popover-link-container">
+                        <h3 class="popover-item-title">Desert Quail Inn</h3>
+                        <p class="popover-item-type-house">Мотель</p>
+                      </div>
+                    </a>                      
+                    <button class="popover-delete-button button" type="button">
+                      <svg class="popover-delete-icon" aria-hidden="true" focusable="false" width="16" height="16" fill="black" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.3 2.3H.6c-.3 0-.6.2-.6.5s.3.6.6.6h1.7v12c0 .3.3.6.6.6h10.2c.3 0 .6-.3.6-.6v-12h1.7c.3 0 .6-.3.6-.6s-.4-.5-.7-.5Zm-2.8 12.5H3.4V3.4h9.1v11.4ZM6.2 1.2h3.4c.3 0 .6-.3.6-.6S10 0 9.7 0H6.2c-.3 0-.5.3-.5.6s.2.6.5.6Z"/>
+                        <path d="M6.2 12c.3 0 .6-.3.6-.6V5.7c0-.3-.3-.6-.6-.6s-.6.3-.6.6v5.7c.1.3.3.6.6.6ZM9.7 12c.3 0 .6-.3.6-.6V5.7c0-.3-.3-.6-.6-.6s-.6.4-.6.6v5.7c0 .3.2.6.6.6Z"/>
+                      </svg>
+                      <span class="visually-hidden">Удалить</span>
+                    </button>
+                  </li>
+                  <li class="popover-item">
+                    <a class="popover-item-link" href="product3.html">
+                      <img class="popover-item-image" src="img/product-cards/villas.jpg" width="48" height="48" alt="Villas at Poco Diablo">
+                      <div class="popover-link-container">
+                        <h3 class="popover-item-title">Villas at Poco Diablo</h3>
+                        <p class="popover-item-type-house">Апартаменты</p>
+                      </div>
+                    </a>                      
+                    <button class="popover-delete-button button" type="button">
+                      <svg class="popover-delete-icon" aria-hidden="true" focusable="false" width="16" height="16" fill="black" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.3 2.3H.6c-.3 0-.6.2-.6.5s.3.6.6.6h1.7v12c0 .3.3.6.6.6h10.2c.3 0 .6-.3.6-.6v-12h1.7c.3 0 .6-.3.6-.6s-.4-.5-.7-.5Zm-2.8 12.5H3.4V3.4h9.1v11.4ZM6.2 1.2h3.4c.3 0 .6-.3.6-.6S10 0 9.7 0H6.2c-.3 0-.5.3-.5.6s.2.6.5.6Z"/>
+                        <path d="M6.2 12c.3 0 .6-.3.6-.6V5.7c0-.3-.3-.6-.6-.6s-.6.3-.6.6v5.7c.1.3.3.6.6.6ZM9.7 12c.3 0 .6-.3.6-.6V5.7c0-.3-.3-.6-.6-.6s-.6.4-.6.6v5.7c0 .3.2.6.6.6Z"/>
+                      </svg>
+                      <span class="visually-hidden">Удалить</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <a class="popover-all-favorites-button" href="#">Все избранные</a>
+            </div>
             <button class="button navigation-other-btn" type="button">Хочу сюда!</button>
           </div>
         </nav>
@@ -161,6 +201,66 @@
             </svg>
         </a>
       </footer>
+    </div>
+    <div class="modal-container modal-container-close">
+      <div class="modal modal-search">
+        <button class="modal-close-button">
+          <span class="visually-hidden">Закрыть</span>
+          <svg class="modal-close-icon" aria-hidden="true" focusable="false" viewBox="0 0 13 13" width="13" height="13" fill="black" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1.2 11.8 0 6.5 5.3 1.2 0 0 1.2l5.3 5.3L0 11.8 1.2 13l5.3-5.3 5.3 5.3 1.2-1.2-5.3-5.3L13 1.2Z"/>
+          </svg>
+        </button>
+        <section class="modal-content">
+          <h2 class="modal-content-title">Поиск гостиницы в Седоне</h2>
+          <form action="https://echo.htmlacademy.ru/courses" method="POST">
+            <div class="modal-content-container"> 
+              <label class="modal-label" for="arrival">Дата заезда:</label>
+              <input class="modal-field" type="text" name="date-arrival" placeholder="Выберите дату" value="27 апреля 2020" id="arrival" required>
+              <span class="datepicker-toggle-button"></span>
+              <span class="modal-message error-message">Мы не можем отправить вас в прошлое.</span>
+            </div>            
+            <div class="modal-content-container">
+              <label class="modal-label" for="exit">Дата выезда:</label>
+              <input class="modal-field" type="text" name="date-exit" placeholder="Выберите дату" value="1 сентября 2021" id="exit" required>
+              <span class="datepicker-toggle-button"></span>
+              <span class="modal-message">На эти даты есть свободные номера. Пока есть.</span>
+            </div>            
+            <div class="modal-content-container-inner">
+              <div class="modal-content-container"> 
+                <label class="modal-label" for="adults">Взрослые:</label>
+                <div class="modal-field-container">
+                  <input class="modal-field" type="number" name="number" placeholder="" value="2" id="adults" min="1" required>
+                  <button class="modal-button button-minus" type="button">
+                    <span class="visually-hidden">Меньше</span>
+                  </button>
+                  <button class="modal-button button-plus" type="button">
+                    <span class="visually-hidden">Больше</span>
+                  </button>
+                </div>
+              </div>
+              <div class="modal-content-container">
+                <label class="modal-label" for="children">Дети:</label>
+                <div class="modal-tooltip modal-tooltip-open">
+                  <button class="modal-tooltip-info-button" type="button">
+                    <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                  </button>
+                  <p class="modal-tooltip-description">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</p>
+                </div>                
+                <div class="modal-field-container">
+                  <input class="modal-field" type="number" name="number" placeholder="" value="1" id="children" min="0">
+                  <button class="modal-button button-minus" type="button">
+                    <span class="visually-hidden">Меньше</span>
+                  </button>
+                  <button class="modal-button button-plus" type="button">
+                    <span class="visually-hidden">Больше</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button class="modal-search-submit-button" type="submit">Найти</button>
+          </form>
+        </section>
+      </div>
     </div>
   </body>
 </html>
