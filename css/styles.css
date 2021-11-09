@@ -412,7 +412,8 @@ body {
 }
 
 .main-index-logo {
-  background: url("../img/main-divider.svg"), url("../img/background/index-background.jpg");
+  background-color: #6b869d;
+  background-image: url("../img/main-divider.svg"), url("../img/background/index-background.jpg");
   background-size: 100% auto, cover;
   background-repeat: no-repeat;
   background-position: bottom center;
@@ -588,6 +589,7 @@ body {
   padding: 92px 0 94px;
   text-align: center;
   color: #ffffff;
+  background-color: #496d82;
   background-image: url("../img/background/background-newsletter.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -698,6 +700,7 @@ body {
 /*----------------------------------------------------------------------------------*/
 .main-footer {
   display: flex;
+  align-items: center;
   width: 100%;
   margin-top: auto;
   padding: 25px 49px 25px 61px;
@@ -707,8 +710,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 149px;
-  margin: 0 auto 0 0;
+  width: 216px;
+  margin: 0 142.8px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -718,7 +721,7 @@ body {
   margin-bottom: 4px;
 }
 
-.social-item:nth-child(3n) {
+.social-item:nth-child(5n) {
   margin-right: 0;
 }
 
@@ -835,26 +838,27 @@ body {
 
 .catalog-container {
   color: #ffffff;
+  background-color: #4b6075;
   background-image: url("../img/background/catalog-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 32px;
+  padding-top: 37px;
   padding-bottom: 71px;
 }
 
 .inner-header-title {
-  margin: 0 0 4px 0;
+  margin: 0;
   font-weight: 700;
   font-size: 60px;
-  line-height: 78px;
-  height: 68px;
+  line-height: 68px;
+  min-height: 68px;
 }
 
 .breadcrumbs {/*список хлебные крошки*/
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 0 0 42px -7px;
+  margin: 0 0 41px -7px;
   padding: 0;
   list-style: none;
 }
@@ -1326,7 +1330,7 @@ body {
   display: grid;
   grid-template-columns: 180px 1fr 160px;
   gap: 31px;
-  padding: 27px 0 30px;
+  padding: 27px 0 22px;
   position: relative;
 }
 
@@ -1343,7 +1347,7 @@ li.product-cards-item:after {
 
 .product-card-img {/*картинка гостиницы*/
   display: block;
-  margin-top: auto;
+  margin-top: 4px;
   width: 180px;
   height: 120px;
 }
@@ -1390,7 +1394,6 @@ li.product-cards-item:after {
 /*------------------------------------------------------------------------------------------------*/
 .product-card-container {/*блок с назв-м, типом, стоим, кнопками*/
   width: 100%;
-  max-width: 400px;
 }
 
 .product-card-title {/*название гостиницы*/
@@ -1421,13 +1424,17 @@ li.product-cards-item:after {
 }
 
 .product-card-button-container {/*блок с кнопками*/
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 30px;
+  padding-left: 5px;
 }
 
 .product-card-button {/*кнопки*/
   width: 100%;
-  display: inline-block;
-  margin-right: 4px;
+  display: block;
+  margin-right: 8px;
+  margin-bottom: 8px;
   padding: 8px;
   font-size: 16px;
   line-height: 21px;
@@ -1442,7 +1449,6 @@ li.product-cards-item:after {
 .button-details {
   background-color: #756257;
   max-width: 151px;
-  margin-left: 5px;
 }
 
 .button-favorites {
@@ -1506,12 +1512,13 @@ li.product-cards-item:after {
 .product-card-grade {/*блок звезды и рейтинг*/
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin-left: auto;
+  padding-top: 7px;
+  padding-bottom: 8px;
 }
 
 .product-card-stars {
-  margin-bottom: 62px;
-  padding-top: 7px;
   display: flex;
   justify-content: center;
 }
@@ -1937,14 +1944,6 @@ li.product-cards-item:after {
   background-repeat: no-repeat;
 }
 
-.modal-tooltip-open .modal-tooltip-description {
-  display: block;
-}
-
-.modal-tooltip-open .modal-tooltip-info-button {
-  background-color: #68A2CA;
-}
-
 .modal-search-submit-button {
   width: 100%;
   margin-top: 27px;
@@ -1962,6 +1961,10 @@ li.product-cards-item:after {
   cursor: pointer;
 }
 
+
+button.modal-tooltip-open:hover + .modal-tooltip-description {
+  display: block;
+}
 .modal-tooltip-info-button:hover,
 .modal-tooltip-info-button:focus,
 .modal-tooltip-info-button:active,
