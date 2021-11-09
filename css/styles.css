@@ -228,7 +228,7 @@ img {
 /*--------------------------------------------------------------------------------popover*/
 .popover {
   width: 400px;
-  min-height: 86px;/*если в избранном не будет ничего*/
+  min-height: 86px;
   font-family: "PT Sans", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -791,12 +791,12 @@ img {
   position: relative;
   display: block;
   width: 161px;
-  height: 70px;/*добавила фиксированные ширину и высоту, иначе padding ссылки схлопывался с margin svg*/
+  height: 70px;
   margin-left: auto;
   border-radius: 10px;
 }
 
-.htmlacademy-link-logo {/*логотип академии через svg*/
+.htmlacademy-link-logo {
   position: absolute;
   top: 0;
   right: 0;
@@ -839,7 +839,7 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 32px;
-  padding-bottom: 71px;/*горизонтальные паддинги 72px заданы через класс wrapper*/
+  padding-bottom: 71px;
 }
 
 .inner-header-title {
@@ -852,8 +852,9 @@ img {
 
 .breadcrumbs {/*список хлебные крошки*/
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  margin: 0 0 42px -7px;/*у ссылки с домиком padding отодвигают список хлебных крошек, отрицательным margin компенсирую*/
+  margin: 0 0 42px -7px;
   padding: 0;
   list-style: none;
 }
@@ -1229,7 +1230,7 @@ img {
   color: #333333;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
-  background-color: #ffffff;/**в firefox фон поля не по макету*/
+  background-color: #ffffff;
   background-image: url("../img/background/dropdown.svg");
   background-repeat: no-repeat;
   background-position: right 19px center;
@@ -1248,7 +1249,7 @@ img {
 .select-control:active {
   color: rgba(0, 0, 0, 0.3);
   border-color:#e5e5e5;
-  background-image: url("../img/background/dropdown-opacity.svg");/*если задавать opacity то бледнеет весь элемент, в т.ч. и граница, а по макету она не должна изменяться*/
+  background-image: url("../img/background/dropdown-opacity.svg");
 }
 
 .sorting-group {
@@ -1290,7 +1291,7 @@ img {
   box-shadow: inset 0 0 0 2px #83b3d3;
   outline: none;
 }
-.sorting-group a:active {/*в макете данное состояние не прописано*/
+.sorting-group a:active {
   opacity: 30%;
   box-shadow: none;
 }
@@ -1490,7 +1491,7 @@ li.product-cards-item:after {
 .button-favorites-select:focus,
 .button-favorites-select:active {
   background-color: #6C9E42;
-  box-shadow: none;/*тень наследуется от .button-favorites:active*/
+  box-shadow: none;
 }
 
 .button-favorites-select:focus {
@@ -1679,7 +1680,7 @@ li.product-cards-item:after {
   height: 100%;
   display: flex;
   background-color: rgba(242, 242, 242, 0.8);
-  z-index: 2;/*иначе на модальное окно наползает логотип в хедере при приближении*/
+  z-index: 2;
 }
 
 .modal-container-close {
@@ -1800,7 +1801,7 @@ li.product-cards-item:after {
 
 .modal-message {
   margin-left: 155px;
-  min-height: 27px;/*чтобы форма не ломалась при пустом сообщении*/
+  min-height: 27px;
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
@@ -1895,7 +1896,7 @@ li.product-cards-item:after {
   width: 25px;
   height: 25px;
   background-color: #83B3D3;
-  background-image: url(../img/background/info.svg);
+  background-image: url("../img/background/info.svg");
   background-position: center;
   background-repeat: no-repeat;
   border: none;
